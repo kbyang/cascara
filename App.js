@@ -1,18 +1,59 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import coffeeShops from './coffeeShops.json';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  FlatList,
+  AsyncStorage,
+  Platform,
+  TextInput,
+  TouchableHighlight
+} from 'react-native';
+
+const isAndroid = Platform.OS == "Android";
 
 export default class App extends React.Component {
+
+  // initial state
+  state = {
+    coffeeShops: coffeeShops,
+    location: ""
+  }
+
+
+  constructor() {
+    super();
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <Text>Hi Abby</Text>
+        <View style={styles.titleContainer}  >
+          <Text style={styles.title}>Coffee Shops Near You</Text>
+        </View>
+        <TextInput
+          style={styles.textInput} 
+          onSubmitEditing={this.onNewItem}
+          placeholder='Add New Item'
+          returnKeyType="done"
+          onChangeText={this.onChangeText}
+          value={this.state.item}
+          />
+        
+        <FlatList
+          data={coffeeShops}
+          renderItem={({item}) => (
+              <View style={{backgroundColor: 'white'}}>
+                <Text>{item.name}</Text>
+              </View>
+          )} 
+        />
       </View>
     );
   }
-}
+
+} // App
 
 const styles = StyleSheet.create({
   container: {
@@ -20,5 +61,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 100
   },
 });
