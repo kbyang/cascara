@@ -1,0 +1,46 @@
+[
+	{ 
+		"key": "1",
+		"name": "Starbucks"
+	},
+	{
+		"key": "2",
+		"name": "Kevin's Place"
+	},
+	{
+		"key": "3",
+		"name": "Abby's Place"
+	},
+	{
+		"key": "4",
+		"name": "Doggo's Place"
+	},
+	{
+		"key": "5",
+		"name": "Cat Place"
+	},
+	{
+		"key": "6",
+		"name": "Catuccino"
+	},
+	{
+		"key": "7",
+		"name": "Meowcha"
+	},
+	{
+		"key": "8",
+		"name": "Pawmpkin spice"
+	},
+	{
+		"key": "9",
+		"name": "Maui's Place"
+	},
+	{
+		"key": "10",
+		"name": "Callie's Place"
+	},
+	{
+		"key": "11",
+		"name": "Orange's Place"
+	},
+]
